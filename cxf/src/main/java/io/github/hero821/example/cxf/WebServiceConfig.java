@@ -17,7 +17,7 @@ public class WebServiceConfig {
 
     @Bean
     public Endpoint helloEndpoint() {
-        EndpointImpl endpoint = new EndpointImpl(bus, new HelloPortImpl());
+        EndpointImpl endpoint = new EndpointImpl(bus, new HelloImpl());
         endpoint.publish("/Hello");
         return endpoint;
     }
