@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>geolocation</title>
+</head>
+<body>
+<script>
+    (function () {
+        let $getCurrentPosition = navigator.geolocation.getCurrentPosition;
+        navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+            let $successCallback = function (e) {
+                let $e = {
+                    coords: {
+                        //精度
+                        accuracy: e.coords.accuracy,
+                        //海拔高度
+                        altitude: e.coords.altitude,
+                        //海拔高度的精度
+                        altitudeAccuracy: e.coords.altitudeAccuracy,
+                        //运动方向
+                        heading: e.coords.heading,
+                        //纬度
+                        latitude: e.coords.latitude,
+                        //经度
+                        longitude: e.coords.longitude,
+                        //速度
+                        speed: e.coords.speed
+                    },
+                    timestamp: e.timestamp
+                };
+                successCallback.call(this, $e);
+            };
+            $getCurrentPosition.call(this, $successCallback, errorCallback, options);
+        };
+    })();
+    // 仅用于手机端，桌面端报错
+    navigator.geolocation.getCurrentPosition(
+        function (e) {
+            console.log(e);
+        }, function (e) {
+            console.log(e);
+        }, {
+            enableHighAccuracy: true, timeout: 2000, maximumAge: 0
+        }
+    );
+</script>
+</body>
+</html>
