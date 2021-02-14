@@ -1,12 +1,15 @@
 package io.github.hero821.example.jdk.process;
 
-public class Main {
-    private String file = "/opt/test.tar";
+/**
+ * 通过系统命令拷贝文件
+ */
+public class FileCopy {
     private long startTime, endTime;
-    //    private String[] commands = new String[]{"cmd.exe", "/c", "copy", file, file};
-    private String[] commands = new String[]{"cp", file, file};
+    private final String file = "/opt/test.tar";
+    //private String[] commands = new String[]{"cmd.exe", "/c", "copy", file, file};
+    private final String[] commands = new String[]{"cp", file, file};
 
-    public Main() throws Exception {
+    public FileCopy() throws Exception {
         copy_exec();
         copy_exec_waitFor();
     }
@@ -28,6 +31,6 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception {
-        new Main();
+        new FileCopy();
     }
 }

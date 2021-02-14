@@ -8,12 +8,15 @@ import java.nio.channels.FileChannel;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
-@SuppressWarnings({"DuplicatedCode", "unused"})
-public class Main {
-    private String file = "/opt/test.tar";
+/**
+ * 通过JAVA类拷贝文件
+ */
+@SuppressWarnings({"DuplicatedCode"})
+public class FileCopy {
     private long startTime, endTime;
+    private final String file = "/opt/test.tar";
 
-    public Main() throws Exception {
+    public FileCopy() throws Exception {
         copy_FileInputStream_FileOutputStream();
         copy_BufferedInputStream_BufferedOutputStream();
         copy_FileReader_FileWriter();
@@ -122,6 +125,6 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception {
-        new Main();
+        new FileCopy();
     }
 }
