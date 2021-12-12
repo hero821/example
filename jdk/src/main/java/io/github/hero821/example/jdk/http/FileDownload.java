@@ -1,4 +1,4 @@
-package io.github.hero821.example.jdk.http;
+package io.github.hero821.example.cloudevents.http;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.InputStream;

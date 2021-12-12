@@ -1,4 +1,4 @@
-package io.github.hero821.example.jdk.io;
+package io.github.hero821.example.cloudevents.io;
 
 import org.apache.commons.io.FileUtils;
 
