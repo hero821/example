@@ -9,11 +9,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>io.github.hero821</groupId>
-    <artifactId>example.web</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>example.web</name>
-    <description>Example for Web</description>
+    <groupId>io.github.hero821.example</groupId>
+    <artifactId>web</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>web</name>
+    <description>Web</description>
 
     <properties>
         <java.version>1.8</java.version>

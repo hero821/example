@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>example.javaagent</artifactId>
-        <groupId>io.github.hero821</groupId>
+        <groupId>io.github.hero821.example</groupId>
+        <artifactId>javaagent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>example.javaagent.agent</artifactId>
+    <artifactId>javaagent.agent</artifactId>
 
     <dependencies>
         <dependency>

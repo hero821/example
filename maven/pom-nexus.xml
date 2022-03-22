@@ -2,13 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.github.hero821</groupId>
-    <artifactId>example.maven</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <groupId>io.github.hero821.example</groupId>
+    <artifactId>maven</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>example.maven</name>
-    <description>Example for Maven</description>
+    <name>maven</name>
+    <description>Maven</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
