@@ -1,3 +1,4 @@
+.mvn
 target/
 !**/src/main/**
 !**/src/test/**
