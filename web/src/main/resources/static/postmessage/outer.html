@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>outer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<!--<iframe id="iframe1" src="inner.html" style="width: 100%;height: 600px;border-width: 0"></iframe>-->
+<iframe id="iframe2" src="http://39.170.53.33:38045/scenes/9e2cfefd97d03ed7e67b27c90fabfb98/view" style="width: 100%;height: 600px;border-width: 0"></iframe>
+<!--<iframe id="iframe2" src="http://192.168.8.24:8001/scenes/78672bb4614d964bc934bfce52f14cbd/view" style="width: 100%;height: 600px;border-width: 0"></iframe>-->
+<script>
+    window.addEventListener('message', function (event) {
+        // console.log(JSON.parse(event.data));
+        console.log(event.data);
+    });
+
+    setTimeout(function () {
+        document.getElementById('iframe2').contentWindow.postMessage({
+            "action": "zoom",
+            "level": 18
+        }, '*');
+    }, 10000);
+
+    setInterval(function () {
+        document.getElementById('iframe2').contentWindow.postMessage({
+            "action": "getZoomLevel",
+            "callback": "getZoomLevelCallback"
+        }, '*');
+    }, 2000);
+</script>
+</body>
+</html>

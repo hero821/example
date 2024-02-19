@@ -12,7 +12,7 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <vertx.version>4.2.4</vertx.version>
+        <vertx.version>4.2.6</vertx.version>
     </properties>
 
     <dependencies>
@@ -27,53 +27,80 @@
             <version>${vertx.version}</version>
         </dependency>
         <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-web-proxy</artifactId>
+            <version>${vertx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-http-proxy</artifactId>
+            <version>${vertx.version}</version>
+        </dependency>
+        <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.2.10</version>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>com.google.guava</groupId>-->
-        <!--            <artifactId>guava</artifactId>-->
-        <!--            <version>30.0-jre</version>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>30.0-jre</version>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!--
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <executions>
+                    <!--                    <execution>-->
+                    <!--                        <id>AppHttpSfcGw</id>-->
+                    <!--                        <configuration>-->
+                    <!--                            <archive>-->
+                    <!--                                <manifest>-->
+                    <!--                                    <mainClass>io.github.hero821.example.vertx.AppHttpSfcGw</mainClass>-->
+                    <!--                                </manifest>-->
+                    <!--                            </archive>-->
+                    <!--                            <descriptorRefs>-->
+                    <!--                                <descriptorRef>jar-with-dependencies</descriptorRef>-->
+                    <!--                            </descriptorRefs>-->
+                    <!--                            <finalName>AppHttpSfcGw</finalName>-->
+                    <!--                        </configuration>-->
+                    <!--                        <phase>package</phase>-->
+                    <!--                        <goals>-->
+                    <!--                            <goal>single</goal>-->
+                    <!--                        </goals>-->
+                    <!--                    </execution>-->
+                    <!--                    <execution>-->
+                    <!--                        <id>AppHttpSfcSf</id>-->
+                    <!--                        <configuration>-->
+                    <!--                            <archive>-->
+                    <!--                                <manifest>-->
+                    <!--                                    <mainClass>io.github.hero821.example.vertx.AppHttpSfcSf</mainClass>-->
+                    <!--                                </manifest>-->
+                    <!--                            </archive>-->
+                    <!--                            <descriptorRefs>-->
+                    <!--                                <descriptorRef>jar-with-dependencies</descriptorRef>-->
+                    <!--                            </descriptorRefs>-->
+                    <!--                            <finalName>AppHttpSfcSf</finalName>-->
+                    <!--                        </configuration>-->
+                    <!--                        <phase>package</phase>-->
+                    <!--                        <goals>-->
+                    <!--                            <goal>single</goal>-->
+                    <!--                        </goals>-->
+                    <!--                    </execution>-->
                     <execution>
-                        <id>build-a</id>
+                        <id>AppK8sProxy</id>
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>io.github.hero821.example.vertx.AppHttpSfcGw</mainClass>
+                                    <mainClass>io.github.hero821.example.vertx.AppK8sProxy</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>
                                 <descriptorRef>jar-with-dependencies</descriptorRef>
                             </descriptorRefs>
-                            <finalName>AppHttpSfcGw</finalName>
-                        </configuration>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>build-b</id>
-                        <configuration>
-                            <archive>
-                                <manifest>
-                                    <mainClass>io.github.hero821.example.vertx.AppHttpSfcSf</mainClass>
-                                </manifest>
-                            </archive>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                            <finalName>AppHttpSfcSf</finalName>
+                            <finalName>AppK8sProxy</finalName>
                         </configuration>
                         <phase>package</phase>
                         <goals>
@@ -82,23 +109,22 @@
                     </execution>
                 </executions>
             </plugin>
-            -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-dependencies</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--            <plugin>-->
+            <!--                <groupId>org.apache.maven.plugins</groupId>-->
+            <!--                <artifactId>maven-dependency-plugin</artifactId>-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <id>copy-dependencies</id>-->
+            <!--                        <phase>package</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>copy-dependencies</goal>-->
+            <!--                        </goals>-->
+            <!--                        <configuration>-->
+            <!--                            <outputDirectory>${project.build.directory}/lib</outputDirectory>-->
+            <!--                        </configuration>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--            </plugin>-->
         </plugins>
     </build>
 </project>
